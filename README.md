@@ -47,7 +47,7 @@ Table CreditLoan
   - lastname varchar(50) not null
   - email varchar(80) not null
   - phone varchar(20)
-	- ratesCount int not null
+  - ratesCount int not null
   - deadline date
   - fk_creditdealsId int
   - fk_statusId int
