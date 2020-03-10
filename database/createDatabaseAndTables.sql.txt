@@ -1,0 +1,18 @@
+CREATE DATABASE kredihay;
+USE kredihay;
+CREATE TABLE `creditpackages` (
+  `packageid` int(11) PRIMARY KEY,
+  `packagename` varchar(255) NOT NULL
+)
+;
+
+CREATE TABLE creditLending(
+	creditid int PRIMARY KEY AUTO_INCREMENT,
+    firstname varchar(50) not null,
+    lastname varchar(50) not null,
+    email varchar(80) not null,
+    phone varchar(20),
+	numberOfRates int not null,
+    creditPackage int, 
+    FOREIGN KEY(creditPackage) REFERENCES creditpackages(packageid)
+)
