@@ -1,7 +1,7 @@
 CREATE DATABASE kredihay;
 USE kredihay;
 CREATE TABLE `creditpackages` (
-  `packageid` int(11) PRIMARY KEY,
+  `packageid` int(11) PRIMARY KEY AUTO_INCREMENT,
   `packagename` varchar(255) NOT NULL
 )
 ;
