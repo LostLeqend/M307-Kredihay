@@ -21,10 +21,10 @@
             </tr>
             <?php foreach($creditLoans as $credit){ ?>
                 <tr class="item">
-                    <td class="column"><?= $credit['firstname'] . ' ' . $credit['lastname'] ?></td>
-                    <td class="column"><?= $credit['creditdealDescription'] ?></td>
-                    <td class="column"><?= $credit['deadline'] ?></td>
-                    <td class="column"><?= $credit['statusDescription'] ?></td>
+                    <td class="column"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
+                    <td class="column"><?= $credit->creditdeal ?></td>
+                    <td class="column"><?= $credit->deadline ?></td>
+                    <td class="column"><?= $credit->status ?></td>
                     <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png"></button></td>
                 </tr>
             <?php } ?>
