@@ -32,7 +32,7 @@
 
             <div class="input-set">
                 <label for="ratesCount">Anzahl Raten*</label>
-                <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required>
+                <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required cha>
             </div>
 
             <div class="input-set">
@@ -48,6 +48,19 @@
                 <label for="deadline">Zahlungsfrist</label>
                 <input id="deadline" name="deadline" type="date" readonly>
             </div>
+
+            <script type="text/javascript">
+                //const input = document.querySelector('input');
+                //const log = document.getElementById('values');
+                //input.addEventListener('input', updateValue);
+                //function updateValue(e) {
+                //log.textContent = e.target.value;
+                //
+                //const input = document.querySelector('input');
+                //const input = document.getElementById('deadline');
+                //input.value = '10.10.2020';
+                document.getElementById("deadline").value = "25.02.2020"
+            </script>
 
             <button formaction="NewCreditLoanValidation" formmethod="post">Erstellen</button>
         </form>
