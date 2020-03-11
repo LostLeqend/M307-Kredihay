@@ -32,7 +32,7 @@ class Creditloan
     public function create()
     {
         $statement = db()->prepare('INSERT INTO `creditloans` (firstname, lastname, email, phone, countOfRates, deadline, fk_creditdealsId, fk_statusId) 
-            VALUES (:firstname, :lastname, :email, :phone, :countOfRates, :deadline, :fk_creditdealsId, :fk_statusId,)');
+            VALUES (:firstname, :lastname, :email, :phone, :countOfRates, :deadline, :fk_creditdealsId, :fk_statusId)');
         $statement->bindParam(':firstname', $this->firstname, PDO::PARAM_STR);
         $statement->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
         $statement->bindParam(':email', $this->email, PDO::PARAM_STR);
@@ -104,7 +104,14 @@ class Creditloan
     public function update()
     {
         $statement = db()->prepare('UPDATE `creditloans` 
-            SET firstname = :firstname, lastname = :lastname, email = :email, phone = :phone, fk_statusId = :fk_statusId, fk_creditdealsId = :fk_creditdealsId WHERE creditId = :creditId');
+            SET firstname = :firstname, 
+                lastname = :lastname, 
+                email = :email, 
+                phone = :phone, 
+                fk_statusId = :fk_statusId, 
+                fk_creditdealsId = :fk_creditdealsId 
+            WHERE creditId = :creditId
+            ');
         $statement->bindParam(':firstname', $this->firstname);
         $statement->bindParam(':lastname', $this->lastname);
         $statement->bindParam(':email', $this->email);
