@@ -1,0 +1,4 @@
+INSERT INTO `status` (`statusDescription`) VALUES
+('Offen'),
+('Geschlossen')
+;
