@@ -39,9 +39,9 @@ class Status
         statusDescription
     FROM statuses
     WHERE statusId = :statusId');
-        $statement->bindParam(':creditId', $statusId, PDO::PARAM_INT);
+        $statement->bindParam(':statusId', $statusId, PDO::PARAM_INT);
         $statement->execute();
 
-        return Creditloan::dbResultToCreditloan($statement->fetch());
+        return Status::dbResultToStatus($statement->fetch());
     }
 }
