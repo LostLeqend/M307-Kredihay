@@ -13,35 +13,35 @@
 
         <table id="creditTable">
             <tr>
-                <th class="title">Name</th>
-                <th class="title">Kreditart</th>
-                <th class="title">Zahlungsfrist</th>
-                <th class="title">Status</th>
-                <th class="title">Bearbeiten</th>
+                <th class="tableTitle">Name</th>
+                <th class="tableTitle">Kreditart</th>
+                <th class="tableTitle">Zahlungsfrist</th>
+                <th class="tableTitle">Status</th>
+                <th class="tableTitle">Bearbeiten</th>
             </tr>
 
             <?php foreach($creditLoans as $credit){ ?>
                 <tr class="item">
-                    <th class="column"><?= $credit['firstname'] . ' ' . $credit['lastname'] ?></th>
-                    <th class="column"><?= $credit['creditType'] ?></th>
-                    <th class="column"><?= $credit['deadline'] ?></th>
-                    <th class="column"><?= $credit['status'] ?></th>
-                    <th class="column"><button onclick="editCreditLoan()">Edit</button></th>
+                    <td class="column"><?= $credit['firstname'] . ' ' . $credit['lastname'] ?></td>
+                    <td class="column"><?= $credit['creditType'] ?></td>
+                    <td class="column"><?= $credit['deadline'] ?></td>
+                    <td class="column"><?= $credit['status'] ?></td>
+                    <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png"></button></td>
                 </tr>
             <?php } ?>
 
             <script>
                 function editCreditLoan() {
-                    window.location = 'editCreditLoan';
+                    window.location = 'EditCreditLoan';
                 }
             </script>
         </table>
 
-    <button onclick="createCreditLoan()">Create</button>
+        <button onclick="createCreditLoan()">Create</button>
 
         <script>
             function createCreditLoan() {
-                window.location = 'createCreditLoan';
+                window.location = 'CreateCreditLoan';
             }
         </script>
 

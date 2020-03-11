@@ -15,7 +15,7 @@
 
         <script>
             function CreateCreditLoan() {
-                window.location = 'newCreditLoanValidation';
+                window.location = 'NewCreditLoanValidation';
             }
         </script>
     </body>
