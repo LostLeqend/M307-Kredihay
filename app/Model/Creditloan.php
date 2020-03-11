@@ -61,7 +61,7 @@ class Creditloan
             st.statusDescription
         FROM creditloans
         Left Join creditdeals cd on cd.creditdealId = fk_creditdealsId
-        Left Join status st on st.statusId = fk_statusId
+        Left Join statuses st on st.statusId = fk_statusId
         ');
         $statement->execute();
 
@@ -93,7 +93,7 @@ class Creditloan
         st.statusDescription
     FROM creditloans
     Left Join creditdeals cd on cd.creditdealId = fk_creditdealsId
-    Left Join status st on st.statusId = fk_statusId
+    Left Join statuses st on st.statusId = fk_statusId
     WHERE creditId = :creditId');
         $statement->bindParam(':creditId', $creditId, PDO::PARAM_INT);
         $statement->execute();

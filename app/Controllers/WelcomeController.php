@@ -1,19 +1,22 @@
 <?php
+require_once "app/Model/Creditloan.php";
     $creditOne = [
         "firstname" => "Janis",
         "lastname" => "Kneubühler",
-        "creditType" => "gold",
+        "creditdealDescription" => "gold",
         "deadline" => '2020-10-07',
-        "status" => "open"
+        "statusDescription" => "open"
     ];
 
     $creditTwo = [
         "firstname" => "Raphael",
         "lastname" => "Härtel",
-        "creditType" => "gold",
+        "creditdealDescription" => "gold",
         "deadline" => '2020-10-07',
-        "status" => "open"
+        "statusDescription" => "open"
     ];
+    
+    //$_creditLoans = Creditloan::getAll();
 
     $creditLoans = [
         $creditOne,
