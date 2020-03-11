@@ -16,17 +16,17 @@ class Creditloan
 
     public function __construct($creditId = null, $firstname  = null, $lastname = null, $email = null, $phone = null, $countOfRates = null, $deadline = null, $fk_creditdealsId = null, $fk_statusId = null, $creditdeal = null, $status = null)
     {
-    $this->creditId = $creditId;
-    $this->firstname = $firstname;
-    $this->lastname = $lastname;
-    $this->email = $email;
-    $this->phone = $phone;
-    $this->countOfRates = $countOfRates;
-    $this->deadline = $deadline;
-    $this->fk_creditdealsId = $fk_creditdealsId;
-    $this->fk_statusId = $fk_statusId;
-    $this->creditdeal = $creditdeal;
-    $this->status = $status;
+        $this->creditId = $creditId;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->email = $email;
+        $this->phone = $phone;
+        $this->countOfRates = $countOfRates;
+        $this->deadline = $deadline;
+        $this->fk_creditdealsId = $fk_creditdealsId;
+        $this->fk_statusId = $fk_statusId;
+        $this->creditdeal = $creditdeal;
+        $this->status = $status;
     }
 
     public function create()

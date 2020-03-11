@@ -15,7 +15,9 @@
             <div class="input-set">
                 <label for="firstname">Vorname*</label>
                 <input id="firstname" name="firstname" type="text" required>
+            </div>
 
+            <div class="input-set">
                 <label for="lastname">Nachname*</label>
                 <input id="lastname" name="lastname" type="text" required>
             </div>
@@ -27,7 +29,7 @@
 
             <div class="input-set">
                 <label for="email">Email*</label>
-                <input id="email" name="email" type="text" required>
+                <input id="email" name="email" type="email" required>
             </div>
 
             <div class="input-set">
@@ -38,11 +40,15 @@
             <div class="input-set">
                 <label for="creditdeals">Kreditpaket</label>
                 <select id="creditdeals">
-                    <?php foreach($creditdeals as $creditDeal) { ?>
-                        <option value="<?php $creditDeal['creditdealDescription'] ?>"><?= $creditDeal['creditdealDescription'] ?></option>
+                    <?php foreach($creditDeals as $creditDeal) { ?>
+                        <option name="test" value="<?php $creditDeal->creditdealDescription ?>"><?= $creditDeal->creditdealDescription ?></option>
                     <?php } ?>
                 </select>
             </div>
+
+            <script>
+                document.getElementById("ratesCount").value = '1';
+            </script>
 
             <div class="input-set">
                 <label for="deadline">Zahlungsfrist</label>

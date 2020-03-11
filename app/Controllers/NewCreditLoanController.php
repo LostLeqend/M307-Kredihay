@@ -1,7 +1,6 @@
 <?php
-    //require_once "app/Models/Creditdeal.php";
-    //$creditdeals = new Creditdeal();
-    $creditDealOpen = [ 'id' => '0', 'creditdealDescription' => 'Offen'];
-    $creditDealClosed = [ 'id' => '1', 'creditdealDescription' => 'Geschlossen'];
-    $creditdeals = [$creditDealOpen, $creditDealClosed];
+    require_once "app/Model/Creditdeal.php";
+
+    $creditDeals = Creditdeal::getAll();
+
     require "app/Views/NewCreditLoan.View.php";
