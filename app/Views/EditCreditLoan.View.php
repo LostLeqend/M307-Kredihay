@@ -10,7 +10,7 @@
         <h1>Kredihay</h1>
 
         <h2>Kreditverleih</h2>
-        
+
         <table>
             <tr>
                 <th>Name</th>
