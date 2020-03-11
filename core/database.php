@@ -1,18 +1,16 @@
 <?php
-/**
- * Stellt eine Verbindung zur Datenbank her und gibt die
- * Datenbankverbindung als PDO zurück.
- *
- * @return PDO
- */
-function connectToDatabase()
+$dbConnection = null;
+function db()
 {
+  global $dbConnection;
+  if(!$dbConnection){
     try {
-        return new PDO('mysql:host=127.0.0.1;dbname=tasklist', 'root', '', [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-        ]);
+        $dbConnection = new PDO('mysql:host=localhost;dbname=kredihay;charset=utf8;', 'root', '');
     } catch (PDOException $e) {
         die('Keine Verbindung zur Datenbank möglich: ' . $e->getMessage());
     }
+
+    $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  return $dbConnection;
 }

@@ -14,19 +14,21 @@ class Creditloan
     public $creditdeal;
     public $status;
 
-    public function __construct($creditId = null, $firstname = null, $lastname = null, $email = null, $phone = null, $countOfRates = null, $deadline = null, $fk_creditdealsId = null, $fk_statusId = null, $creditdeal = null, $status = null)
+    public function __construct($creditId = null, $firstname  = null, $lastname = null, $email = null, $phone = null, $countOfRates = null, $deadline = null, $fk_creditdealsId = null, $fk_statusId = null, $creditdeal = null, $status = null)
     {
-    public $creditId;
-    public $firstname;
-    public $lastname;
-    public $email;
-    public $phone;
-    public $countOfRates;
-    public $deadline;
-    public $fk_creditdealsId;
-    public $fk_statusId;
-    public $creditdeal;
-    public $status;
+        echo 'Konstruktor wurde aufgerufen!<br>';
+    $this->creditId = $creditId;
+    $this->firstname = $firstname;
+    $this->lastname = $lastname;
+    $this->email = $email;
+    $this->phone = $phone;
+    $this->countOfRates = $countOfRates;
+    $this->deadline = $deadline;
+    $this->fk_creditdealsId = $fk_creditdealsId;
+    $this->fk_statusId = $fk_statusId;
+    $this->creditdeal = $creditdeal;
+    $this->status = $status;
+    echo 'Konstruktor Ende!<br>';
     }
 
     public function create()
