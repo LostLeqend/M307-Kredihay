@@ -3,17 +3,17 @@ CREATE DATABASE kredihay;
 USE kredihay;
 
 CREATE TABLE creditdeals (
-  packageid int PRIMARY KEY AUTO_INCREMENT,
-  packagename varchar(255) NOT NULL
+  creditdealId int PRIMARY KEY AUTO_INCREMENT,
+  creditdealDescription varchar(255) NOT NULL
 );
 
-CREATE TABLE status(
-   statusid int PRIMARY KEY AUTO_INCREMENT,
-   description varchar(50) not null
+CREATE TABLE statuses(
+   statusId int PRIMARY KEY AUTO_INCREMENT,
+   statusDescription varchar(50) not null
 );
 
 CREATE TABLE creditloans(
-  creditid int PRIMARY KEY AUTO_INCREMENT,
+  creditId int PRIMARY KEY AUTO_INCREMENT,
   firstname varchar(50) not null,
   lastname varchar(50) not null,
   email varchar(80) not null,
@@ -22,6 +22,6 @@ CREATE TABLE creditloans(
   deadline date,
   fk_creditdealsId int, 
   fk_statusId int,
-  FOREIGN KEY(creditdeals) REFERENCES creditdeals(packageId),
-  FOREIGN KEY(status) REFERENCES status(statusId)
+  FOREIGN KEY(fk_creditdealsId) REFERENCES creditdeals(creditdealId),
+  FOREIGN KEY(fk_statusId) REFERENCES statuses(statusId)
 );
