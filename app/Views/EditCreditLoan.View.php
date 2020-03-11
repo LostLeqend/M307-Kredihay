@@ -7,18 +7,18 @@
         <link rel="stylesheet" href="public/css/app.css">
     </head>
     <body>
-        <h1>Kredihay</h1>
+        <h1><a href="Home">Kredihay</a></h1>
 
         <h2>Neuer Kreditverleih</h2>
 
         <form>
             <div class="input-set">
-                <label for="firstname">Vorname*</label>
+                <label for="firstname">Vorname</label>
                 <input id="firstname" name="firstname" type="text" required>
             </div>
 
             <div class="input-set">
-                <label for="lastname">Nachname*</label>
+                <label for="lastname">Nachname</label>
                 <input id="lastname" name="lastname" type="text" required>
             </div>
 
@@ -28,7 +28,7 @@
             </div>
 
             <div class="input-set">
-                <label for="email">Email*</label>
+                <label for="email">Email</label>
                 <input id="email" name="email" type="text" required>
             </div>
 

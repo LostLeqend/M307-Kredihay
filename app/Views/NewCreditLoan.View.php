@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="public/css/app.css">
     </head>
     <body>
-        <h1>Kredihay</h1>
+        <h1><a href="Home">Kredihay</a></h1>
 
         <h2>Neuer Kreditverleih</h2>
 

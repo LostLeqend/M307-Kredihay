@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="public/css/app.css">
     </head>
     <body>
-        <h1>Kredihay</h1>
+        <h1><a href="Home">Kredihay</a></h1>
 
         <h2>Kreditverleih</h2>
 
@@ -25,13 +25,28 @@
                     <td class="column"><?= $credit->creditdeal ?></td>
                     <td class="column"><?= $credit->deadline ?></td>
                     <td class="column"><?= $credit->status ?></td>
-                    <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png"></button></td>
+                    <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
                 </tr>
             <?php } ?>
 
             <script>
                 function editCreditLoan() {
-                    window.location = 'EditCreditLoan';
+                    //window.location = 'EditCreditLoan';
+
+                    let form = document.createElement('form');
+                    document.body.appendChild(form);
+                    form.method = 'post';
+                    form.action = 'EditCreditLoan';
+
+                    // for (let name in creditLoans) {
+                    //     let input = document.createElement('input');
+                    //     input.type = 'hidden';
+                    //     input.name = name;
+                    //     input.value = name;
+                    //     form.appendChild(input);
+                    // }
+
+                    form.submit();
                 }
             </script>
         </table>

@@ -53,7 +53,7 @@ button:hover {
 }
 
 .btnEdit:hover {
-    background: white;
+    background: #171717;
 }
 
 input {
@@ -75,4 +75,10 @@ input:focus {
 .input-set {
     margin-top: 0.625rem;
     margin-bottom: 0.625rem;
+}
+
+a:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
 }
