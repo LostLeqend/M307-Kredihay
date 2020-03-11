@@ -1,5 +1,5 @@
 body {
-    margin: 1.25rem;
+    margin: 1.5rem;
     background: #171717;
     color: white;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
@@ -54,4 +54,13 @@ button:hover {
 
 .btnEdit:hover {
     background: white;
+}
+
+input {
+    border: none;
+}
+
+.input-set {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
 }

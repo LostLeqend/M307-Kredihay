@@ -12,42 +12,42 @@
         <h2>Neuer Kreditverleih</h2>
 
         <form>
-            <label for="firstname">Vorname*</label>
-            <input id="firstname" name="firstname" type="text" required>
+            <div class="input-set">
+                <label for="firstname">Vorname*</label>
+                <input id="firstname" name="firstname" type="text" required>
 
-            <label for="firstname">Vorname*</label>
-            <input id="firstname" name="firstname" type="text" required>
+                <label for="lastname">Nachname*</label>
+                <input id="lastname" name="lastname" type="text" required>
+            </div>
 
-            <br>
+            <div class="input-set">
+                <label for="telefon">Telefon</label>
+                <input id="telefon" name="telefon" type="text">
+            </div>
 
-            <label for="telefon">Telefon</label>
-            <input id="telefon" name="telefon" type="text">
+            <div class="input-set">
+                <label for="email">Email*</label>
+                <input id="email" name="email" type="text" required>
+            </div>
 
-            <br>
+            <div class="input-set">
+                <label for="ratesCount">Anzahl Raten*</label>
+                <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required>
+            </div>
 
-            <label for="email">Email*</label>
-            <input id="email" name="email" type="text" required>
+            <div class="input-set">
+                <label for="creditdeals">Kreditpaket</label>
+                <select id="creditdeals">
+                    <?php foreach($creditdeals as $creditDeal) { ?>
+                        <option value="<?php $creditDeal['creditdealDescription'] ?>"><?= $creditDeal['creditdealDescription'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
 
-            <br>
-
-            <label for="ratesCount">Anzahl Raten*</label>
-            <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required>
-
-            <br>
-
-            <label for="creditdeals">Kreditpaket</label>
-            <select id="creditdeals">
-                <?php foreach($creditdeals as $creditDeal) { ?>
-                    <option value="<?php $creditDeal['creditdealDescription'] ?>"><?= $creditDeal['creditdealDescription'] ?></option>
-                <?php } ?>
-            </select>
-
-            <br>
-
-            <label for="deadline">Zahlungsfrist</label>
-            <input id="deadline" name="deadline" type="date" readonly>
-
-            <br>
+            <div class="input-set">
+                <label for="deadline">Zahlungsfrist</label>
+                <input id="deadline" name="deadline" type="date" readonly>
+            </div>
 
             <button formaction="NewCreditLoanValidation" formmethod="post">Erstellen</button>
         </form>
