@@ -1,4 +1,4 @@
-INSERT INTO `creditpackages` (`packagename`) VALUES
+INSERT INTO `creditdeals` (`creditdealDescription`) VALUES
 ('Kredit Basic: 1k'),
 ('Kredit Basic: 2k'),
 ('Kredit Basic: 3k'),
