@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //$_creditdeals = $_POST['creditdeals'];
     $creditloan = new Creditloan(null, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, "2020-05-06", 6, 1);
     $creditloan->create();
-    //header('Location: http://localhost/M307-Kredihay');
+    header('Location: http://localhost/M307-Kredihay');
+
+    
 }  
 ?>
