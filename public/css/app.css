@@ -57,8 +57,19 @@ button:hover {
 }
 
 input {
+    color: inherit;
+    background: inherit;
     border: none;
-    padding: 0.25rem;
+    border-bottom: 1px solid white;
+    padding: 0.4rem 0.2rem;
+}
+
+input:focus {
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid #596dff;
+    padding: 0.4rem 0.2rem;
+    outline: none;
 }
 
 .input-set {

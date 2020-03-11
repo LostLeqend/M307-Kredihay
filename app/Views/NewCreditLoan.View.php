@@ -34,21 +34,17 @@
 
             <div class="input-set">
                 <label for="ratesCount">Anzahl Raten*</label>
-                <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required cha>
+                <input id="ratesCount" name="ratesCount" type="number" value="1" min="1" max="10" required onchange="calculateDeadline()">
             </div>
 
             <div class="input-set">
-                <label for="creditdeals">Kreditpaket</label>
-                <select id="creditdeals">
+                <label for="creditDeals">Kreditpaket</label>
+                <select name="creditDeals"  id="creditDeals">
                     <?php foreach($creditDeals as $creditDeal) { ?>
-                        <option name="test" value="<?php $creditDeal->creditdealDescription ?>"><?= $creditDeal->creditdealDescription ?></option>
+                        <option value="<?= $creditDeal->creditdealId ?>"><?= $creditDeal->creditdealDescription ?></option>
                     <?php } ?>
                 </select>
             </div>
-
-            <script>
-                document.getElementById("ratesCount").value = '1';
-            </script>
 
             <div class="input-set">
                 <label for="deadline">Zahlungsfrist</label>
@@ -56,16 +52,29 @@
             </div>
 
             <script type="text/javascript">
-                //const input = document.querySelector('input');
-                //const log = document.getElementById('values');
-                //input.addEventListener('input', updateValue);
-                //function updateValue(e) {
-                //log.textContent = e.target.value;
-                //
-                //const input = document.querySelector('input');
-                //const input = document.getElementById('deadline');
-                //input.value = '10.10.2020';
-                document.getElementById("deadline").value = "25.02.2020"
+                document.addEventListener("DOMContentLoaded", function(event) {
+                    calculateDeadline();
+                });
+
+                function calculateDeadline(){
+                    let count = document.getElementById('ratesCount').value;
+
+                    if(count != null) {
+                        let deadline = new Date();
+                        let days = count * 15;
+                        deadline.setDate(deadline.getDate() + days);
+
+                        let day = deadline.getDate();
+                        if(day < 10)
+                            day = '0' + day;
+                        let month = deadline.getMonth() + 1;
+                        if(month < 10)
+                            month = '0' + month;
+                        let year = deadline.getFullYear();
+
+                        document.getElementById("deadline").value = year + '-' + month + '-' + day;
+                    }
+                }
             </script>
 
             <button formaction="NewCreditLoanValidation" formmethod="post">Erstellen</button>
