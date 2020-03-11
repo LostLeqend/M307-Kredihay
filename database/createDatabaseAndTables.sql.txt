@@ -7,7 +7,7 @@ CREATE TABLE creditdeals (
   creditdealDescription varchar(255) NOT NULL
 );
 
-CREATE TABLE status(
+CREATE TABLE statuses(
    statusId int PRIMARY KEY AUTO_INCREMENT,
    statusDescription varchar(50) not null
 );
@@ -23,5 +23,5 @@ CREATE TABLE creditloans(
   fk_creditdealsId int, 
   fk_statusId int,
   FOREIGN KEY(fk_creditdealsId) REFERENCES creditdeals(creditdealId),
-  FOREIGN KEY(fk_statusId) REFERENCES status(statusId)
+  FOREIGN KEY(fk_statusId) REFERENCES statuses(statusId)
 );
