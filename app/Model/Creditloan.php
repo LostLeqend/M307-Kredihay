@@ -16,7 +16,6 @@ class Creditloan
 
     public function __construct($creditId = null, $firstname  = null, $lastname = null, $email = null, $phone = null, $countOfRates = null, $deadline = null, $fk_creditdealsId = null, $fk_statusId = null, $creditdeal = null, $status = null)
     {
-        echo 'Konstruktor wurde aufgerufen!<br>';
     $this->creditId = $creditId;
     $this->firstname = $firstname;
     $this->lastname = $lastname;
@@ -28,7 +27,6 @@ class Creditloan
     $this->fk_statusId = $fk_statusId;
     $this->creditdeal = $creditdeal;
     $this->status = $status;
-    echo 'Konstruktor Ende!<br>';
     }
 
     public function create()
