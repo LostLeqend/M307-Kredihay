@@ -39,7 +39,7 @@
 
             <div class="input-set">
                 <label for="deadline">Zahlungsfrist</label>
-                <input id="deadline" name="deadline" type="datetime-local" value="<?= $creditloan->deadline ?>" readonly>
+                <input id="deadline" name="deadline" type="date" value="<?= $creditloan->deadline ?>" readonly>
             </div>
 
             <div class="input-set">
