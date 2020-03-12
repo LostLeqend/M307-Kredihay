@@ -97,9 +97,9 @@ Testfall 8:
 - DANN    ->   Der neue Namen wird in der Datenbank aktuallisert und in der Liste angezeigt
 
 Testfall 9:
-- GEGEBEN ->   Vier Kredite
-- WENN    ->   Ich sortiere nach Deadline
-- DANN    ->   Die richtige Reihenfolge wird angezeigt
+- GEGEBEN ->   Keine Kredite
+- WENN    ->   Ich erstelle drei Kredite
+- DANN    ->   Der älteste Kredit wird zu oberst angezeigt
 
 Testfall 10:
 - GEGEBEN ->   Ein Kredit
