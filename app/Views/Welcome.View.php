@@ -76,7 +76,6 @@
             }
 
             function closeAllSelectedCredits() {
-                if(credits.length <= 0)
                 let form = document.createElement('form');
                 document.body.appendChild(form);
                 form.method = 'post';
@@ -89,7 +88,6 @@
                     input.value = credits[i];
                     form.appendChild(input);
                 }
-
                 form.submit();
             }
         </script>
