@@ -11,6 +11,9 @@
 
         $creditloan = new Creditloan(null, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, $_deadline, $_creditDeals, 1);
         $hasStartedYet = true;
+
+        $creditloan->create();
+        header('Location: http://localhost/M307-Kredihay');
     }
     else{
         $hasStartedYet = false;
