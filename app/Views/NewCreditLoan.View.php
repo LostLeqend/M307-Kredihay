@@ -84,7 +84,7 @@
                 }
             </script>
 
-            <button formaction="NewCreditLoanValidation" formmethod="post">Erstellen</button>
+            <button formaction="CreateCreditLoan" formmethod="post">Erstellen</button>
         </form>
     </body>
 </html>
