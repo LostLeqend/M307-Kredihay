@@ -9,32 +9,37 @@
     <body>
         <h1><a href="Home">Kredihay</a></h1>
 
-        <h2>Neuer Kreditverleih</h2>
+        <h2>Kreditverleih bearbeiten</h2>
 
         <form>
             <div class="input-set">
                 <label for="firstname">Vorname</label>
-                <input id="firstname" name="firstname" type="text" required>
+                <input id="firstname" name="firstname" type="text" value="<?= $creditLoan->firstname ?>" required>
             </div>
 
             <div class="input-set">
                 <label for="lastname">Nachname</label>
-                <input id="lastname" name="lastname" type="text" required>
+                <input id="lastname" name="lastname" type="text" value="<?= $creditLoan->lastname ?>" required>
             </div>
 
             <div class="input-set">
                 <label for="telefon">Telefon</label>
-                <input id="telefon" name="telefon" type="text">
+                <input id="telefon" name="telefon" value="<?= $creditLoan->phone ?>" type="text">
             </div>
 
             <div class="input-set">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text" required>
+                <input id="email" name="email" type="text" value="<?= $creditLoan->email ?>" required>
             </div>
 
             <div class="input-set">
-                <label for="ratesCount">Anzahl Raten*</label>
-                <input id="ratesCount" name="ratesCount" type="number" min="1" max="10" required>
+                <label for="ratesCount">Anzahl Raten</label>
+                <input id="ratesCount" name="ratesCount" type="number" value="<?= $creditLoan->countOfRates ?>" readonly>
+            </div>
+
+            <div class="input-set">
+                <label for="deadline">Zahlungsfrist</label>
+                <input id="deadline" name="deadline" type="datetime-local" value="<?= $creditLoan->deadline ?>" readonly>
             </div>
 
             <div class="input-set">
@@ -46,12 +51,9 @@
                 </select>
             </div>
 
-            <div class="input-set">
-                <label for="deadline">Zahlungsfrist</label>
-                <input id="deadline" name="deadline" type="datetime-local" readonly>
-            </div>
 
-            <button formaction="NewCreditLoanValidation" formmethod="post">Erstellen</button>
+
+            <button formaction="EditCreditLoan" formmethod="post">Erstellen</button>
         </form>
     </body>
 </html>

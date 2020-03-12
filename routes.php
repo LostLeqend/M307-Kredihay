@@ -7,5 +7,4 @@ $router->define([
     'Home' => 'app/Controllers/WelcomeController.php',
     'CreateCreditLoan' => "app/Controllers/NewCreditLoanController.php",
     'EditCreditLoan' => "app/Controllers/EditCreditLoanController.php",
-    'NewCreditLoanValidation' => "app/Controllers/NewCreditLoanValidationController.php"
 ]);

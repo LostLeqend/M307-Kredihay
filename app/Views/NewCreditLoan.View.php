@@ -11,6 +11,13 @@
 
         <h2>Neuer Kreditverleih</h2>
 
+        <?php
+        if(isset($errors)){
+        var_dump($errors);
+        }
+        ?>
+
+
         <form>
             <div class="input-set">
                 <label for="firstname">Vorname*</label>

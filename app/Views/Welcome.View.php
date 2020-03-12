@@ -23,32 +23,27 @@
                 if($credit->fk_statusId == 1) { 
                     $emoji = ($credit->deadline >= date("Y-m-d") ? '🌞' : '⚡');?>
                     <tr class="item">
-                        <td class="column" id="name"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
-                        <td class="column" id="creditDeal"><?= $credit->creditdeal ?></td>
-                        <td class="column" id="deadline"><?= $credit->deadline ?></td>
+                        <td class="column"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
+                        <td class="column"><?= $credit->creditdeal ?></td>
+                        <td class="column"><?= $credit->deadline ?></td>
                         <td class="column" id="status"><?= $emoji ?></td>
-                        <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
+                        <td class="column"><button class="btnEdit" onclick="editCreditLoan(<?= $credit->creditId ?>)"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
                     </tr>
                 <?php }
             } ?>
 
             <script>
-                function editCreditLoan() {
-                    //window.location = 'EditCreditLoan';
-
+                function editCreditLoan(creditId) {
                     let form = document.createElement('form');
                     document.body.appendChild(form);
                     form.method = 'post';
                     form.action = 'EditCreditLoan';
 
-                    let 
-                    // for (let name in creditLoans) {
-                    //     let input = document.createElement('input');
-                    //     input.type = 'hidden';
-                    //     input.name = name;
-                    //     input.value = name;
-                    //     form.appendChild(input);
-                    // }
+                    let input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'creditId';
+                    input.value = creditId;
+                    form.appendChild(input);
 
                     form.submit();
                 }

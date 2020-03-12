@@ -74,7 +74,7 @@ class Creditloan
     }
 
     private static function dbResultToCreditloan($r){
-      return new Creditloan($r['creditId'], $r['firstname'], $r['lastname'], $r['email'], $r['phone'], $r['countOfRates'], $r['deadline'], $r['fk_creditdealsId'], $r['fk_statusId'], $r['creditdealDescription'], $r['statusDescription']);
+        return new Creditloan($r['creditId'], $r['firstname'], $r['lastname'], $r['email'], $r['phone'], $r['countOfRates'], $r['deadline'], $r['fk_creditdealsId'], $r['fk_statusId'], $r['creditdealDescription'], $r['statusDescription']);
     }
 
     public static function getById($creditId)
