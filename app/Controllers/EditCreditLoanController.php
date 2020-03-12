@@ -23,9 +23,9 @@
 
             $creditloan = new Creditloan($_creditId, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, $_deadline, $_creditDeals, $_status);
 
-            $errors[] = ValidateCreditloan::validate($creditloan);
+            $errors = ValidateCreditloan::validate($creditloan);
 
-            if(!isset($errors)) {
+            if(count($errors) == 0) {
                 $creditloan->update();
                 header('Location: http://localhost/M307-Kredihay');
             } else {

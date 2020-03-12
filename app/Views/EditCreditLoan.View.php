@@ -11,6 +11,14 @@
 
         <h2>Kreditverleih bearbeiten</h2>
 
+        <?php
+        if(count($errors) != 0){
+            foreach ($errors as $error) {
+                echo'<span style="color:#ff0000;text-align:center;">' . $error . '</span><br>';
+            }
+        }
+        ?>
+
         <form>
             <div class="input-set">
                 <label for="firstname">Vorname</label>
@@ -29,7 +37,7 @@
 
             <div class="input-set">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text" value="<?= $creditloan->email ?>" required>
+                <input id="email" name="email" type="email" value="<?= $creditloan->email ?>" required>
             </div>
 
             <div class="input-set">
