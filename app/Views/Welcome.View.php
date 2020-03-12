@@ -55,26 +55,24 @@
         <button onclick="closeAllSelectedCredits()">Schliesse alle selektierten Kredite</button>
 
         <script>
-            var credits = [];
+            const credits = [];
 
             function setCreditId(cb, creditId) {
                 if(cb.checked){
                     credits.push(creditId);
-                    console.log(credits);
                 }
                 else{
                     let index = credits.indexOf(creditId);
                     credits.splice(index, 1);
-                    console.log(credits);
                 }
             }
 
             function closeAllSelectedCredits() {
-                console.log('test');
-                    let form = document.createElement('form');
-                    document.body.appendChild(form);
-                    form.method = 'post';
-                    form.action = 'Home';
+                if(credits.length <= 0)
+                let form = document.createElement('form');
+                document.body.appendChild(form);
+                form.method = 'post';
+                form.action = 'Home';
 
                 for (let i = 0; i < credits.length; i++) {
                     let input = document.createElement('input');
