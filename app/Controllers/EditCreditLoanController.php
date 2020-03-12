@@ -18,21 +18,19 @@
             $_ratesCount = $_POST['ratesCount'];
             $_deadline = $_POST['deadline'];
             $_creditDeals = $_POST['creditDeals'];
+            $_status = $_POST['status'];
             $_creditId = $_POST['updateCreditId'];
 
-            $creditloan = new Creditloan($_creditId, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, $_deadline, $_creditDeals, 1);
+            $creditloan = new Creditloan($_creditId, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, $_deadline, $_creditDeals, $_status);
 
-            $creditloan->update();
-            header('Location: http://localhost/M307-Kredihay');
-
-/*            $errors[] = ValidateCreditloan::validate($creditloan);
+            $errors[] = ValidateCreditloan::validate($creditloan);
 
             if(!isset($errors)) {
                 $creditloan->update();
                 header('Location: http://localhost/M307-Kredihay');
             } else {
                 require "app/Views/EditCreditLoan.View.php";
-            }*/
+            }
         }
     }
 
