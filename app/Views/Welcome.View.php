@@ -11,6 +11,14 @@
 
         <h2>Kreditverleih</h2>
 
+        <button onclick="createCreditLoan()">Neuer Kredit</button>
+
+        <script>
+            function createCreditLoan() {
+                window.location = 'CreateCreditLoan';
+            }
+        </script>
+
         <table id="creditTable">
             <tr>
                 <th class="tableTitle"></th>
@@ -87,14 +95,5 @@
                 form.submit();
             }
         </script>
-
-        <button onclick="createCreditLoan()">Neuer Kredit</button>
-
-        <script>
-            function createCreditLoan() {
-                window.location = 'CreateCreditLoan';
-            }
-        </script>
-
     </body>
 </html>
