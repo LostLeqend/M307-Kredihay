@@ -12,8 +12,10 @@
         <h2>Neuer Kreditverleih</h2>
 
         <?php
-        if(isset($errors) && $hasStartedYet){
-            var_dump($errors);
+        if(count($errors) != 0 && $hasStartedYet){
+            foreach ($errors as $error) {
+                echo'<span style="color:#ff0000;text-align:center;">' . $error . '</span><br>';
+            }
         }
         ?>
 
