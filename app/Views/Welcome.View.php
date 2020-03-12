@@ -20,12 +20,13 @@
                 <th class="tableTitle">Bearbeiten</th>
             </tr>
             <?php foreach($creditLoans as $credit){
-                if($credit->fk_statusId == 1) { ?>
+                if($credit->fk_statusId == 1) { 
+                    $emoji = ($credit->deadline >= date("Y-m-d") ? '🌞' : '⚡');?>
                     <tr class="item">
                         <td class="column" id="name"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
                         <td class="column" id="creditDeal"><?= $credit->creditdeal ?></td>
                         <td class="column" id="deadline"><?= $credit->deadline ?></td>
-                        <td class="column" id="status"><?= $credit->status ?></td>
+                        <td class="column" id="status"><?= $emoji ?></td>
                         <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
                     </tr>
                 <?php }
