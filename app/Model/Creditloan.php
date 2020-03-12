@@ -62,6 +62,7 @@ class Creditloan
         FROM creditloans
         Left Join creditdeals cd on cd.creditdealId = fk_creditdealsId
         Left Join statuses st on st.statusId = fk_statusId
+        ORDER BY creditId
         ');
         $statement->execute();
 
