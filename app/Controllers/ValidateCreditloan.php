@@ -19,7 +19,7 @@ class ValidateCreditloan
         if (!strpos($creditloan->email, '@')) {
             array_push($errors, "Emailaddresse muss ein @-Zeichen enthalten!");
         }
-        if (preg_match('/^[-\+ 0-9]+$/', $creditloan->phone)) {
+        if (preg_replace("/[^\+\-\ 0-9]/", '', $creditloan->phone) != $creditloan->phone) {
             array_push($errors, "Telefonnummer darf nur Zahlen und die Zeichen +/- enthalten!");
         }
         if(!isset($creditloan->countOfRates) || $creditloan->countOfRates > 10 || $creditloan->countOfRates < 1) {
