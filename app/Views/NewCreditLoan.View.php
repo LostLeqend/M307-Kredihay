@@ -12,8 +12,8 @@
         <h2>Neuer Kreditverleih</h2>
 
         <?php
-        if(isset($errors)){
-        var_dump($errors);
+        if(isset($errors) && $hasStartedYet){
+            var_dump($errors);
         }
         ?>
 

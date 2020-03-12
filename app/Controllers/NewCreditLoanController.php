@@ -10,13 +10,13 @@
         $_creditDeals = $_POST['creditDeals'];
 
         $creditloan = new Creditloan(null, $_firstname, $_lastname, $_email, $_phone, $_ratesCount, $_deadline, $_creditDeals, 1);
+        $hasStartedYet = true;
     }
     else{
+        $hasStartedYet = false;
         $creditloan = new Creditloan(null, '', '', '', '', '', '', '', 1);
     }
-
     $errors[] = ValidateCreditloan::validate($creditloan);
-
     if(!isset($errors)) {
         $creditloan->create();
         header('Location: http://localhost/M307-Kredihay');
