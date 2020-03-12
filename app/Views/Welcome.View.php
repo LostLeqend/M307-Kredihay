@@ -19,15 +19,17 @@
                 <th class="tableTitle">Status</th>
                 <th class="tableTitle">Bearbeiten</th>
             </tr>
-            <?php foreach($creditLoans as $credit){ ?>
-                <tr class="item">
-                    <td class="column"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
-                    <td class="column"><?= $credit->creditdeal ?></td>
-                    <td class="column"><?= $credit->deadline ?></td>
-                    <td class="column"><?= $credit->status ?></td>
-                    <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
-                </tr>
-            <?php } ?>
+            <?php foreach($creditLoans as $credit){
+                if($credit->fk_statusId == 1) { ?>
+                    <tr class="item">
+                        <td class="column" id="name"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
+                        <td class="column" id="creditDeal"><?= $credit->creditdeal ?></td>
+                        <td class="column" id="deadline"><?= $credit->deadline ?></td>
+                        <td class="column" id="status"><?= $credit->status ?></td>
+                        <td class="column"><button class="btnEdit" onclick="editCreditLoan()"><img src="res/Icons.16/edit.png" alt="edit"></button></td>
+                    </tr>
+                <?php }
+            } ?>
 
             <script>
                 function editCreditLoan() {
@@ -38,6 +40,7 @@
                     form.method = 'post';
                     form.action = 'EditCreditLoan';
 
+                    let 
                     // for (let name in creditLoans) {
                     //     let input = document.createElement('input');
                     //     input.type = 'hidden';
