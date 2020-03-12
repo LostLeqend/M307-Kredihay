@@ -27,7 +27,7 @@
 
             if(count($errors) == 0) {
                 $creditloan->update();
-                header('Location: http://localhost/M307-Kredihay');
+                header('Location: Home');
             } else {
                 require "app/Views/EditCreditLoan.View.php";
             }

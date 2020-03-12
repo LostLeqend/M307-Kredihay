@@ -19,7 +19,7 @@
     $errors = ValidateCreditloan::validate($creditloan);
     if(count($errors) == 0) {
         $creditloan->create();
-        header('Location: http://localhost/M307-Kredihay');
+        header('Location: Home');
     }
     else {
         $creditDeals = Creditdeal::getAll();
