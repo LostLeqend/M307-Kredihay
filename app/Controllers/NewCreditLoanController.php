@@ -14,9 +14,10 @@
     }
     else{
         $hasStartedYet = false;
-        $creditloan = new Creditloan(null, '', '', '', '', '', '', '', 1);
+        $creditloan = new Creditloan(null, '', '', '', '', 1, '', '', 1);
     }
     $errors[] = ValidateCreditloan::validate($creditloan);
+
     if(!isset($errors)) {
         $creditloan->create();
         header('Location: http://localhost/M307-Kredihay');

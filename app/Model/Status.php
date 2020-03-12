@@ -7,17 +7,13 @@ class Status
 
     public function __construct($statusId = null, $statusDescription = null)
     {
-    public $statusId;
-    public $statusDescription;
+        $this->statusId = $statusId;
+        $this->statusDescription = $statusDescription;
     }
 
     public static function getAll()
     {
-        $statement = db()->prepare('SELECT
-            statusId,
-            statusDescription
-        FROM statuses
-        ');
+        $statement = db()->prepare('SELECT statusId, statusDescription FROM statuses');
         $statement->execute();
 
         $result = $statement->fetchAll();
@@ -29,16 +25,12 @@ class Status
     }
 
     private static function dbResultToStatus($r){
-      return new Status($r['statusId'], $r['statusDescription']);
+        return new Status($r['statusId'], $r['statusDescription']);
     }
 
     public static function getById($statusId)
     {
-        $statement = db()->prepare('SELECT
-        statusId,
-        statusDescription
-    FROM statuses
-    WHERE statusId = :statusId');
+        $statement = db()->prepare('SELECT statusId, statusDescription FROM statuses WHERE statusId = :statusId');
         $statement->bindParam(':statusId', $statusId, PDO::PARAM_INT);
         $statement->execute();
 

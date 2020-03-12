@@ -21,27 +21,27 @@
         <form>
             <div class="input-set">
                 <label for="firstname">Vorname*</label>
-                <input id="firstname" name="firstname" type="text" required>
+                <input id="firstname" name="firstname" type="text" value="<?= $creditloan->firstname ?>" required>
             </div>
 
             <div class="input-set">
                 <label for="lastname">Nachname*</label>
-                <input id="lastname" name="lastname" type="text" required>
+                <input id="lastname" name="lastname" type="text"  value="<?= $creditloan->lastname ?>" required>
             </div>
 
             <div class="input-set">
                 <label for="telefon">Telefon</label>
-                <input id="telefon" name="telefon" type="text">
+                <input id="telefon" name="telefon" type="text" value="<?= $creditloan->phone ?>" >
             </div>
 
             <div class="input-set">
                 <label for="email">Email*</label>
-                <input id="email" name="email" type="email" required>
+                <input id="email" name="email" type="email" value="<?= $creditloan->email ?>"  required>
             </div>
 
             <div class="input-set">
                 <label for="ratesCount">Anzahl Raten*</label>
-                <input id="ratesCount" name="ratesCount" type="number" value="1" min="1" max="10" required onchange="calculateDeadline()">
+                <input id="ratesCount" name="ratesCount" type="number" value="<?= $creditloan->countOfRates ?>" min="1" max="10" required onchange="calculateDeadline()">
             </div>
 
             <div class="input-set">
