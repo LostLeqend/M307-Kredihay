@@ -12,7 +12,7 @@
         <h2>Kreditverleih bearbeiten</h2>
 
         <?php
-        if(count($errors) != 0){
+        if(!empty($errors)){
             foreach ($errors as $error) {
                 echo'<span style="color:#ff0000;text-align:center;">' . $error . '</span><br>';
             }
