@@ -123,6 +123,18 @@ class Creditloan
         return $statement->execute();
     }
 
+    public function closeCredit()
+    {
+        $statement = db()->prepare('UPDATE `creditloans` 
+            SET  fk_statusId = 2
+            WHERE creditId = :creditId
+            ');
+
+        $statement->bindParam(':creditId', $this->creditId);
+
+        return $statement->execute();
+    }
+
     public static function delete($creditId)
     {
         $statement = db()->prepare('DELETE FROM `creditloans` WHERE creditId = :creditId');

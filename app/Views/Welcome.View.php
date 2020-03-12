@@ -13,6 +13,7 @@
 
         <table id="creditTable">
             <tr>
+                <th class="tableTitle"></th>
                 <th class="tableTitle">Name</th>
                 <th class="tableTitle">Kreditart</th>
                 <th class="tableTitle">Zahlungsfrist</th>
@@ -23,6 +24,7 @@
                 if($credit->fk_statusId == 1) { 
                     $emoji = ($credit->deadline >= date("Y-m-d") ? '🌞' : '⚡');?>
                     <tr class="item">
+                        <td class="column"><input onclick="setCreditId(this, <?= $credit->creditId ?>)" type="checkbox"></td>
                         <td class="column"><?= $credit->firstname . ' ' . $credit->lastname ?></td>
                         <td class="column"><?= $credit->creditdeal ?></td>
                         <td class="column"><?= $credit->deadline ?></td>
@@ -50,7 +52,43 @@
             </script>
         </table>
 
-        <button onclick="createCreditLoan()">Create</button>
+        <button onclick="closeAllSelectedCredits()">Schliesse alle selektierten Kredite</button>
+
+        <script>
+            var credits = [];
+
+            function setCreditId(cb, creditId) {
+                if(cb.checked){
+                    credits.push(creditId);
+                    console.log(credits);
+                }
+                else{
+                    let index = credits.indexOf(creditId);
+                    credits.splice(index, 1);
+                    console.log(credits);
+                }
+            }
+
+            function closeAllSelectedCredits() {
+                console.log('test');
+                    let form = document.createElement('form');
+                    document.body.appendChild(form);
+                    form.method = 'post';
+                    form.action = 'Home';
+
+                for (let i = 0; i < credits.length; i++) {
+                    let input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'creditId' + i;
+                    input.value = credits[i];
+                    form.appendChild(input);
+                }
+
+                form.submit();
+            }
+        </script>
+
+        <button onclick="createCreditLoan()">Neuer Kredit</button>
 
         <script>
             function createCreditLoan() {
