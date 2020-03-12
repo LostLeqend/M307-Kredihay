@@ -43,10 +43,10 @@
             </div>
 
             <div class="input-set">
-                <label for="creditdeals">Kreditpaket</label>
-                <select id="creditdeals">
-                    <?php foreach($creditdeals as $creditDeal) { ?>
-                        <option value="<?php $creditDeal['creditdealDescription'] ?>"><?= $creditDeal['creditdealDescription'] ?></option>
+                <label for="creditDeals">Kreditpaket</label>
+                <select name="creditDeals"  id="creditDeals" selected="<?= $creditLoan->creditdealId ?>">
+                    <?php foreach($creditDeals as $creditDeal) { ?>
+                        <option value="<?= $creditDeal->creditdealId ?>"><?= $creditDeal->creditdealDescription ?></option>
                     <?php } ?>
                 </select>
             </div>

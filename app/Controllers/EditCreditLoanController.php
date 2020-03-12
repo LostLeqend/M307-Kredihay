@@ -1,4 +1,6 @@
 <?php
+    $creditDeals = Creditdeal::getAll();
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_CreditId = $_POST['creditId'];
@@ -14,8 +16,6 @@
             $creditloan->create();
             header('Location: http://localhost/M307-Kredihay');
         } else {
-            $creditDeals = Creditdeal::getAll();
-
             require "app/Views/EditCreditLoan.View.php";
         }
     }

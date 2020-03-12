@@ -1,6 +1,4 @@
 <?php
-    require_once "app/Model/Creditloan.php";
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $_firstname = $_POST['firstname'];
@@ -18,7 +16,8 @@
     }
 
     $errors[] = ValidateCreditloan::validate($creditloan);
-    if(isset($errors)) {
+
+    if(!isset($errors)) {
         $creditloan->create();
         header('Location: http://localhost/M307-Kredihay');
     }
